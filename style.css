@@ -1,7 +1,26 @@
 body {
-    margin: 1;
-    padding: 2px;
+    margin: auto;
+    padding: 15px;
 }
+
 div {
     width: 350px;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.modifyText {
+    color: red;
+    font-weight: bold;
+}
+
+.highlight {
+    background-color: orange;
+} 
+
+img {
+    width: 350px;
+    height: auto;
 }
