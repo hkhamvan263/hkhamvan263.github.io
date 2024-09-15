@@ -97,9 +97,9 @@ function summarizeTable(resArr) {
     else avg = total / res.length;
 
     // Round the average based on its value
-    if (avg >= 100) approxAvg = Math.round(avg);
-    else if (Number.isInteger(avg)) approxAvg = avg;
-    else approxAvg = avg.toFixed(2);
+    if (avg >= 100) approxAvg = Math.round(avg); // Round the avg to the nearest whole num if it is greater than or equal to 100
+    else if (Number.isInteger(avg)) approxAvg = avg; // Set the avg to an int if it is a whole number
+    else approxAvg = avg.toFixed(2); // Round the average to 2 decimal places
 
     // Display the summary table
     document.write("<table>");
