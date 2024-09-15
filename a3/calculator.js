@@ -37,7 +37,7 @@ function defineTbStyle() {
 }
 
 // Handle the calculation of the numbers x and y based on the operator
-function handleCalcuation(op) {
+function handleCalcuation(x, op, y) {
     // Convert x and y to a float
     x = parseFloat(x);
     y = parseFloat(y);
@@ -93,9 +93,7 @@ function summarizeTable(resArr) {
     total = res.reduce((num1, num2) => num1 + num2, 0);
 
     // Calculate the average
-    if (!res.length || (x === null && op === null && y === null)) {
-        avg = NaN;  // Set avg to NaN if there are no valid results
-    }
+    if (!res.length) avg = NaN;  // Set avg to NaN if there are no valid results
     else avg = total / res.length;
 
     // Round the average based on its value
@@ -126,7 +124,7 @@ function buildTable() {
         x = prompt("Enter a number, x: ");
         const op = prompt("Enter an operator (+, -, *, /, %): ");
         y = prompt("Enter another number, y: ");
-        const res = handleCalcuation(op);
+        const res = handleCalcuation(x, op, y);
 
         resArr.push(res); // Add the result to the array
         document.write("<tr><td>" + x + "</td><td class='colorOp'>" + op + "</td><td>" + y + "</td><td>" + res + "</td></tr>");
