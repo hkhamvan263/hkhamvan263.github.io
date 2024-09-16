@@ -32,11 +32,11 @@ function defineTbStyle() {
         }
     `;
 
-    // Append the style to the head of the calculator
+    // Append the style to the head of the calculator file
     document.head.appendChild(style);
 }
 
-// Handle the calculation of the numbers x and y based on the operator
+// Handle the calculation of x and y based on the operator
 function handleCalcuation(x, op, y) {
     // Convert x and y to a float
     x = parseFloat(x);
@@ -58,30 +58,24 @@ function handleCalcuation(x, op, y) {
 
         // Divide the numbers
         case "/":
-            if (y === 0) {
-                // Show an error message if the user tries to divide by zero
-                return "divide by zero error";
-            }
-            else {
-                return x / y;  // Divide x by y
-            }
+            // Show an error message if the user tries to divide by zero
+            if (y === 0) return "divide by zero error";
+            else return x / y;  // Divide x by y
         
         // Find the remainder of the numbers
-        case "%": 
-            if (y === 0) {
-                // Show an error message if the user tries to mod by zero
-                return "modulus by zero error";
-            }
+        case "%":
+            // Show an error message if the user tries to mod by zero
+            if (y === 0) return "modulus by zero error";
             else return x % y;  // Return the remainder of x divided by y
-        default:
-            // Show an error message if the operator is invalid
-            return "computation error";
+        
+        // Show an error message if the operator is invalid
+        default: return "computation error";
     }
 }
 
 // Summarize the results in a table using the min, max, avg, and total
 function summarizeTable(resArr) {
-    defineTbStyle();
+    defineTbStyle(); // Call the function to define the table style
     let avg, approxAvg, res, min, max, total;
     
     // Filter out the invalid results
@@ -127,6 +121,8 @@ function buildTable() {
         const res = handleCalcuation(x, op, y);
 
         resArr.push(res); // Add the result to the array
+
+        // Display the data in each row of the table
         document.write("<tr><td>" + x + "</td><td class='colorOp'>" + op + "</td><td>" + y + "</td><td>" + res + "</td></tr>");
 
         // Ask the user if they want to continue
@@ -135,10 +131,12 @@ function buildTable() {
         // Exit if the user clicks "Cancel"
         if (!continueInput) break;
     }
+
+    // Closing tag for the table
     document.write("</table>");
     
     // Summarize the results in a table
     summarizeTable(resArr);
 }
 
-buildTable();
+buildTable(); // Call the function to build the table
