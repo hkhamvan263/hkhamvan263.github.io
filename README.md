@@ -6,3 +6,4 @@ Hello everyone. This is the website I created for COMP 322: Internet Systems.
 - Home page
 - Introduction
 - The Little Prince
+- Calculator
