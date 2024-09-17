@@ -79,7 +79,7 @@ function summarizeTable(resArr) {
     let avg, approxAvg, res, min, max, total;
     
     // Filter out the invalid results
-    res = resArr.filter(result => typeof result === "number");
+    res = resArr.filter(result => Number.isFinite(result));
 
     // Calculate the min, max, and total
     min = Math.min(...res);
