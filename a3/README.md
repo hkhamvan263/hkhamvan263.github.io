@@ -14,6 +14,6 @@ Back-end: JavaScript
     - Ok means yes, and cancel means no.
 - If you choose to exit, a table of your input will be created with a summary.
     - The summary includes the minimum, maximum, average, and of the results column.
-        - It also includes its total.
+        - The summary also includes its total.
     - Invalid results are excluded from the the summary.
 - You can go back to the homepage after the table has been created.
