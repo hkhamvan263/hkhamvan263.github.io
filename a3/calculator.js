@@ -8,7 +8,7 @@ function defineTbStyle() {
     style.innerHTML = `
         table {
             border: 1px solid black;
-            width: 25%;
+            width: 75%;
             table-layout: fixed;
             text-align: center;
             background-color: orange;
