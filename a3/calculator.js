@@ -1,4 +1,4 @@
-let x, y; // Make x and y accessible to all functions
+let x, y, op; // Make x, y, and op accessible to all functions
 let resArr = []; // Create an array to store the results
 
 // Define the table style
@@ -74,6 +74,12 @@ function handleCalcuation(x, op, y) {
     }
 }
 
+function isBetweenDecimal(avg) {
+    // Check if the average is between 0.1 and 0.9
+    return avg % 1 === 0.5 || avg % 1 === 0.1 || avg % 1 === 0.9 || avg % 1 === 0.4 || avg % 1 === 0.6 || avg % 1 === 0.3 
+        || avg % 1 === 0.7 || avg % 1 === 0.2 || avg % 1 === 0.8;
+}
+
 // Summarize the results in a table using the min, max, avg, and total
 function summarizeTable(resArr) {
     defineTbStyle(); // Call the function to define the table style
@@ -92,8 +98,12 @@ function summarizeTable(resArr) {
     else avg = total / res.length;
 
     // Round the average based on its value
-    if (avg >= 100) approxAvg = Math.round(avg); // Round the avg to the nearest whole num if it is greater than or equal to 100
-    else if (Number.isInteger(avg)) approxAvg = avg; // Set the avg to an int if it is a whole number
+    if (Number.isInteger(avg)) approxAvg = avg; // Set the avg to an int if it is a whole number
+    else if (avg >= 100) approxAvg = Math.round(avg); // Round the avg to the nearest whole num if it is greater than or equal to 100
+    else if (isBetweenDecimal(avg)) {
+        // Round the avg to 1 decimal place if the remainder is between 0.1 and 0.9
+        approxAvg = avg.toFixed(1);
+    }
     else approxAvg = avg.toFixed(2); // Round the average to 2 decimal places
 
     // Display the summary table
@@ -116,7 +126,7 @@ function buildTable() {
     // Get the numbers and operator from the user until they choose to stop
     while (true) {
         x = prompt("Enter a number, x: ");
-        const op = prompt("Enter an operator (+, -, *, /, %): ");
+        op = prompt("Enter an operator (+, -, *, /, %): ");
         y = prompt("Enter another number, y: ");
         const res = handleCalcuation(x, op, y);
 
