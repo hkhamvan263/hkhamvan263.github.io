@@ -10,5 +10,5 @@ Hello everyone. This is the website I created for COMP 322: Internet Systems.
 
 ## Coming Soon
 - Form Page
-- Server Update
+- Client Update
 - Possibly Creating Other Pages
