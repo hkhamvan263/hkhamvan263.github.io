@@ -1,4 +1,5 @@
 let x, y; // Make x and y accessible to all functions
+let resArr = []; // Create an array to store the results
 
 // Define the table style
 function defineTbStyle() {
@@ -104,7 +105,6 @@ function summarizeTable(resArr) {
 
 // Build the table to display the results
 function buildTable() {
-    let resArr = []; // Create an array to store the results
     defineTbStyle(); // Call the function to define the table style
 
     // Create a table to display the results
