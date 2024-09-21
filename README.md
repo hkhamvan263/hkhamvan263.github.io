@@ -9,6 +9,7 @@ Hello everyone. This is the website I created for COMP 322: Internet Systems.
 - Calculator
 
 ## Coming Soon
-- Form Page
+- Form page
+- Link to the Form page
 - Client Update
 - Possibly Creating Other Pages
