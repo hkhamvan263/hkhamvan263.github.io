@@ -3,7 +3,7 @@ let resArr = []; // Create an array to store the results
 
 // Define the table style
 function defineTbStyle() {
-    const style = document.createElement('style');  // Create a style element
+    let style = document.createElement('style');  // Create a style element
 
     // Set the style of the table
     style.innerHTML = `
