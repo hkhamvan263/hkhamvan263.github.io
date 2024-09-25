@@ -3,7 +3,7 @@ let resArr = []; // Create an array to store the results
 
 // Define the table style
 function defineTbStyle() {
-    var style = document.createElement('style');  // Create a style element
+    const style = document.createElement('style');  // Create a style element
 
     // Set the style of the table
     style.innerHTML = `
@@ -38,7 +38,7 @@ function defineTbStyle() {
 }
 
 // Handle the calculation of x and y based on the operator
-function handleCalcuation(x, op, y) {
+function handleCalculation(x, op, y) {
     // Convert x and y to a float
     x = parseFloat(x);
     y = parseFloat(y);
@@ -128,7 +128,7 @@ function buildTable() {
         x = prompt("Enter a number, x: ");
         op = prompt("Enter an operator (+, -, *, /, %): ");
         y = prompt("Enter another number, y: ");
-        const res = handleCalcuation(x, op, y);
+        const res = handleCalculation(x, op, y);
 
         resArr.push(res); // Add the result to the array
 
