@@ -1,4 +1,4 @@
-## a4 Calculator Page
+## a4 Form Page
 
 This is my fourth assignment for COMP 322: Internet Systems where I use HTML and JavaScript to create a user form.
 
