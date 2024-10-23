@@ -11,5 +11,5 @@ Hello everyone. This is the website I created for COMP 322: Internet Systems.
 ## Coming Soon
 - Link to the Form page
 - Client Update
-- Possibly Creating Other Pages
-- Possibly Linking to the Other Page
+- Creation of the JQuery page
+- Possibly Linking to the JQuery Page
