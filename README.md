@@ -7,9 +7,11 @@ Hello everyone. This is the website I created for COMP 322: Internet Systems.
 - Introduction
 - The Little Prince
 - Calculator
+- Form page
+- jQuery page
 
 ## Coming Soon
 - Link to the Form page
 - Client Update
-- Creation of the JQuery page
-- Possibly Linking to the JQuery Page
+- Link to the JQuery Page
+- Other Updates
