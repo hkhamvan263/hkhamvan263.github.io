@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Metadata for the jQuery Events and Effects page -->
+    <head>
+        <meta charset="UTF-8">
+        <title>jQuery Events and Effects</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Link to the JavaScript library for jQuery -->
+        <script src="jquery-3.7.1.min.js"></script>
+        <!-- Javascript code for the jQuery Events page -->
+        <script>
+            // Load the Document Object Model (DOM)
+            $(document).ready(function() {
+                $(".icons").css("height", "100px"); // Change the icons' height to 100px
+                $("p").css({"margin-top": "0", "margin-bottom": "0"}); // Adjust the top and bottom text margins
+                
+                // Add a mouse event for entering the icon
+                $(".icons").mouseenter(function() {
+                    $("#inEnt").text($(this).attr("name")); // Add the icon's name to "In: "
+                    $(this).css("opacity", "0.5"); // Change the icon's opacity
+                });
+                
+                // Add a mouse event for leaving the icon
+                $(".icons").mouseleave(function() {
+                    $("#outExit").text($(this).attr("name")); // Add the icon's name to "Out: "
+                    $(this).css("opacity", "1.0"); // Revert the icon's opacity
+                });
+                
+                // Update the current mouse's position
+                $("#iconCont").mousemove(function(mEvt) {
+                    $("#posX").text(mEvt.pageX); // Update the X position
+                    $("#posY").text(mEvt.pageY); // Update the Y position
+                });
+
+                // Add a click event for the icons to show the icon in a larger size and in full opacity
+                $(".icons").click(function() {
+                    // Remove the old icon and add the new icon
+                    $("#largeIconSect").empty().append($(this).clone().css({"height": "305px", "opacity": "1.0"}));
+                });
+
+                // Redirect the icon's URL in a new tab after double clicking
+                $(".icons").dblclick(function(){window.open($(this).data("href"), "_blank")});
+            });
+        </script>
+    </head>
+    <!-- Body of the jQuery Events and Effects page -->
+    <body>
+        <!-- Container for the icons -->
+        <span id="iconCont">
+            <img src="images/spotify.png" alt="Spotify" class="icons" name="spotify" data-href="https://open.spotify.com">
+            <img src="images/viki.png" alt="Viki" class="icons" name="viki" data-href="https://www.viki.com">
+            <img src="images/twitch.png" alt="Twitch" class="icons" name="twitch" data-href="https://www.twitch.tv">
+            <!-- Split the icons into two rows -->
+            <br>
+            <img src="images/threads.png" alt="Threads" class="icons" name="threads" data-href="https://www.threads.net">
+            <img src="images/buzzfeed.png" alt="Buzzfeed" class="icons" name="buzzfeed" data-href="https://www.buzzfeed.com">
+            <img src="images/tiktok.png" alt="TikTok" class="icons" name="tiktok" data-href="https://www.tiktok.com">
+        </span>
+        <!-- Text to display the event details with null and NaN set by default-->
+        <div>
+            <p>In: <span id="inEnt">null</span></p>
+            <p>Out: <span id="outExit">null</span></p>
+            <p>Mouse X: <span id="posX">NaN</span>, Y: <span id="posY">NaN</span></p>
+        </div>
+        <!-- Section for the enlarged icon -->
+        <div id="largeIconSect"></div>
+    </body>
+</html>
