@@ -12,6 +12,9 @@ Hello everyone. This is the website I created for COMP 322: Internet Systems.
 
 ## Coming Soon
 - Link to the Form page
-- Client Update
 - Link to the JQuery Page
-- Other Updates
+- Express Server
+- Other Update
+
+## Warning
+Please do NOT copy code from this repository and submit it as a class assignment, hackathon project, et cetera.
